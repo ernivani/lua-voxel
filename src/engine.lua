@@ -56,7 +56,7 @@ function engine.draw()
     -- camera matrix
     local upVector = vector3.new(0,1,0)
     local cameraTarget = vector3.new(0,0,1)
-    local cameraRotationMatrix = matrix_multiply(create_y_rotation_matrix(yaw), create_x_rotation_matrix(xaw)) -- create_y_rotation_matrix(yaw)
+    local cameraRotationMatrix = matrix_multiply(create_x_rotation_matrix(xaw), create_y_rotation_matrix(yaw))
     lookDirection = matrix_multiply_vector(cameraRotationMatrix, cameraTarget)
     cameraTarget = lookDirection + camera
 
